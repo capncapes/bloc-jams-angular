@@ -163,6 +163,38 @@
             }
         };
         
+        /**
+        * @function mute
+        * @desc Mute volume of currently playing song
+        * @param {Number} volume
+        */
+        SongPlayer.mute = function(song) {
+            song = song || SongPlayer.currentSong;
+            currentBuzzObject.mute();
+            
+            if (currentBuzzObject.isMuted()) {
+                song.muted = true;
+            } else {
+                song.muted = false;
+            }
+        };
+        
+        /**
+        * @function unmute
+        * @desc Unmute volume of currently playing song
+        * @param {Number} volume
+        */
+        SongPlayer.unmute = function(song) {
+            song = song || SongPlayer.currentSong;
+            currentBuzzObject.unmute();
+            
+            if (currentBuzzObject.isMuted()) {
+                song.muted = true;
+            } else {
+                song.muted = false;
+            }
+        };
+        
         return SongPlayer;
     }
     

@@ -5,7 +5,7 @@
                 <span class="ion-skip-backward"></span>
             </a>
             <a class="play-pause">
-                <span class='ion-play'
+                <span class="ion-play"
                     ng-show="!playerBar.songPlayer.currentSong.playing"
                     ng-click="playerBar.songPlayer.play()">
                 </span>
@@ -29,7 +29,10 @@
             <h3 class="artist-name">{{ playerBar.albumData.artist }}</h3>
         </div>
         <div class="control-group volume">
-            <span class="ion-volume-high icon"></span>
+            <a class="volume-mute">
+                <span class="ion-volume-high icon" ng-show="!playerBar.songPlayer.currentSong.muted" ng-click="playerBar.songPlayer.mute()"></span>
+                <span class="ion-android-volume-mute icon" ng-show="playerBar.songPlayer.currentSong.muted" ng-click="playerBar.songPlayer.unmute()"></span>
+            </a>
             <seek-bar value="60" max="100" on-change="playerBar.songPlayer.volume(value)"></seek-bar>
         </div>
     </div>

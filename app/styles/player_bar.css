@@ -9,7 +9,7 @@
 }
 
 .player-bar a {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     vertical-align: middle;
 }
 
@@ -44,7 +44,7 @@
 
 .player-bar .main-controls .play-pause {
     margin-right: 15%;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
  
 .player-bar .currently-playing {
@@ -139,8 +139,8 @@
     text-align: right;
  }
 
-.player-bar .volume .icon {
-    font-size: 1.1rem;
+.player-bar .volume .volume-mute {
+    font-size: 1.6rem;
     display: inline-block;
     vertical-align: middle;
 }
