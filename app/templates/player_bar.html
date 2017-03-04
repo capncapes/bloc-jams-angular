@@ -29,10 +29,12 @@
             <h3 class="artist-name">{{ playerBar.albumData.artist }}</h3>
         </div>
         <div class="control-group volume">
-            <a class="volume-mute">
-                <span class="ion-volume-high icon" ng-show="!playerBar.songPlayer.currentSong.muted" ng-click="playerBar.songPlayer.mute()"></span>
-                <span class="ion-android-volume-mute icon" ng-show="playerBar.songPlayer.currentSong.muted" ng-click="playerBar.songPlayer.unmute()"></span>
-            </a>
+            <span class="volume-mute-container">
+                <a class="volume-mute">
+                    <span class="ion-volume-high icon" ng-show="!playerBar.songPlayer.currentSong.muted" ng-click="playerBar.songPlayer.mute()"></span>
+                    <span class="ion-android-volume-mute icon" ng-show="playerBar.songPlayer.currentSong.muted" ng-click="playerBar.songPlayer.unmute()"></span>
+                </a>
+            </span>
             <seek-bar value="60" max="100" on-change="playerBar.songPlayer.volume(value)"></seek-bar>
         </div>
     </div>

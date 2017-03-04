@@ -25,13 +25,19 @@
             }
             
             currentBuzzObject = new buzz.sound(song.audioUrl, {
-                formats: ['mp3'],
+                formats: [ "mp3" ],
                 preload: true
             });
             
             currentBuzzObject.bind('timeupdate', function() {
                 $rootScope.$apply(function() {
                     SongPlayer.currentTime = currentBuzzObject.getTime();
+                });
+            });
+            
+            currentBuzzObject.bind('ended', function() {
+                $rootScope.$apply(function() {
+                    SongPlayer.next();
                 });
             });
             
@@ -166,7 +172,7 @@
         /**
         * @function mute
         * @desc Mute volume of currently playing song
-        * @param {Number} volume
+        * @param {Object} song
         */
         SongPlayer.mute = function(song) {
             song = song || SongPlayer.currentSong;
@@ -182,7 +188,7 @@
         /**
         * @function unmute
         * @desc Unmute volume of currently playing song
-        * @param {Number} volume
+        * @param {Object} song
         */
         SongPlayer.unmute = function(song) {
             song = song || SongPlayer.currentSong;
